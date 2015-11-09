@@ -1,0 +1,39 @@
+<template name="courseList">
+  <div class="col-md-5">
+    {{> courseForm }}
+  </div>
+  <div class="col-md-7">
+    {{#if isReady "courses"}}
+    <table class="table table-hover">
+      <caption>Course Data</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Workload</th>
+          <th>Enrolled Students</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+      {{#each courses }}
+        {{ > courseListRow }}
+      {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    <div class="loading">
+      {{> spinner}}
+    </div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="courseListRow">
+<tr>
+  <td>{{name}}</td>
+  <td>{{subject}}</td>
+  <td>{{workload}}</td>
+  <td>{{students.length}}</td>
+</tr>
+</template>
