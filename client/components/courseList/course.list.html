@@ -17,7 +17,12 @@
       
       <tbody>
       {{#each courses }}
-        {{ > courseListRow }}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{subject}}</td>
+          <td>{{workload}}</td>
+          <td>{{students.length}}</td>
+        </tr>
       {{/each}}
       </tbody>
     </table>
@@ -27,13 +32,4 @@
     </div>
     {{/if}}
   </div>
-</template>
-
-<template name="courseListRow">
-<tr>
-  <td>{{name}}</td>
-  <td>{{subject}}</td>
-  <td>{{workload}}</td>
-  <td>{{students.length}}</td>
-</tr>
 </template>
