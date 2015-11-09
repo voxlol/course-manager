@@ -1,2 +1,19 @@
 <template name="course">
+{{#if isReady "course"}}
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  {{#with course}}
+  <div class="panel-heading">{{name}}</div>
+  <div class="panel-body">
+    <p>
+      <h3>{{subject}}</h3>
+      <h4>{{workload}} total hours</h4>
+      Lorem ipsum. This is a dummy description at the moment, and is totally not reactive at all.
+    </p>
+  </div>
+  {{/with}}
+</div>
+{{else}}
+  <div class="loading">{{ > spinner }}</div>
+{{/if}}
 </template>

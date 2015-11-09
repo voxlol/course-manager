@@ -16,9 +16,9 @@
       </thead>
       
       <tbody>
-      {{#each courses }}
+      {{ #each courses }}
         <tr>
-          <td>{{name}}</td>
+          <td><a href="/course/{{_id}}">{{name}}</a></td>
           <td>{{subject}}</td>
           <td>{{workload}}</td>
           <td>{{students.length}}</td>

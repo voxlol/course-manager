@@ -1,17 +1,13 @@
 (function(){
-  Template.courseList.onRendered(init);
+  Template.courseList.onRendered(function (){
+    console.log('Course List Template Rendered!');
+    Session.set('courseListIx', 1);
+  });
 
   Template.courseList.helpers({
     isReady: isReady,
     courses: getAllCourses,
   });
-
-  // OnRendered
-
-  function init(){
-    console.log('Course List Template Rendered!');
-    Session.set('courseListIx', 1);
-  }
 
   // Helpers
 
